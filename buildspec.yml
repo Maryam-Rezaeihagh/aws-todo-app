@@ -15,9 +15,9 @@ phases:
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $REGISTRY_URI
 
   build:
-    commands:
-      - echo Build started on date
-      - docker build -t $REPOSITORY_URI:latest backend
+  commands:
+    - echo Build started on date
+    - docker build -t $REPOSITORY_URI:latest .
 
   post_build:
     commands:
